@@ -6,7 +6,7 @@
 
 // Funzione che calcola l'hash SHA3-512 di un input di tipo stringa
 std::string sha3_512(const std::string& input) {
-    unsigned char hash[SHA512_DIGEST_LENGTH]; // Array per memorizzare il valore dell'hash generato (64 byte per SHA-512)
+    unsigned char hash[SHA512_DIGEST_LENGTH]; // Array per memorizzare il valore dell'hash generato
     SHA512_CTX sha3_context;                  // Contesto per memorizzare lo stato dell'algoritmo di hash durante il calcolo
 
     // Inizializza il contesto per SHA3-512
@@ -16,7 +16,7 @@ std::string sha3_512(const std::string& input) {
     // Completa il calcolo dell'hash e lo salva nell'array 'hash'
     SHA512_Final(hash, &sha3_context);
 
-    // Convertiamo l'hash in una stringa esadecimale
+    // Converte l'hash in una stringa esadecimale
     std::stringstream ss;
     for(int i = 0; i < SHA512_DIGEST_LENGTH; i++) {
         // Ogni byte viene convertito in esadecimale e aggiunto allo stream
